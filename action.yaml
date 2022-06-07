@@ -37,7 +37,7 @@ runs:
      if: steps.changed-files.outputs.any_modified == 'true'
      uses: actions/github-script@v2
      with:
-        github-token: ${{ inputs.github_token }}
+        github-token: ${{ github.token }}
         script: |
          github.issues.createComment({
             issue_number: ${{ inputs.github_event_number }},
