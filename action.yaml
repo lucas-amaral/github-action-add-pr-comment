@@ -11,6 +11,10 @@ inputs:
    pr_message:
       description: "Message to add on PR if there is any change on input files"
       required: true      
+   github_token: 
+      description: "The github token"
+      required: true
+   
       
 runs:
   using: "composite"
@@ -31,7 +35,7 @@ runs:
      if: steps.changed-files.outputs.any_modified == 'true'
      uses: actions/github-script@v2
      with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
+        github-token: ${{ inputs.github_token }}
         script: |
          github.issues.createComment({
             issue_number: ${{ github.event.number }},
