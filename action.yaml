@@ -34,6 +34,7 @@ runs:
          ${{ inputs.files_ignore }}
       
    - name: Test
+     shell: bash
      run: |
          echo "${{ github.event.number }} and ${{ github.token }}"
    
