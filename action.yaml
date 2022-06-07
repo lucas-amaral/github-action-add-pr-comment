@@ -33,6 +33,9 @@ runs:
        files_ignore: |
          ${{ inputs.files_ignore }}
       
+   - name: Test
+     run: echo "${{ github.event.number }} and ${{ github.token }}"
+   
    - name: Add PR Comment if any file on input list was changed
      if: steps.changed-files.outputs.any_modified == 'true'
      uses: actions/github-script@v2
