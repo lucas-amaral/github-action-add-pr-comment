@@ -10,12 +10,6 @@ inputs:
       required: true
    pr_message:
       description: "Message to add on PR if there is any change on input files"
-      required: true      
-   github_token: 
-      description: "The github token"
-      required: true
-   github_event_number:
-      description: "PR id"
       required: true
       
 runs:
