@@ -48,5 +48,5 @@ runs:
             issue_number: ${{ github.event.number }},
             owner: lucas-amaral,
             repo: dummy-hub,
-            body: ${{ inputs.pr_message }}
+            body: '${{ inputs.pr_message }}'
          }) 
