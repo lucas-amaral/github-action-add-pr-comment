@@ -48,5 +48,5 @@ runs:
               issue_number: ${{ github.event.number }},
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: ':warning: This pull-request touches codebase which can affect Charge performance. If you are unsure of the impact, please ping in the #engineering slack channel to ask for more eyes to review the changes'
+              body: 'Test'
             }) 
