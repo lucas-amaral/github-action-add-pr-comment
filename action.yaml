@@ -14,7 +14,9 @@ inputs:
    github_token: 
       description: "The github token"
       required: true
-   
+   github_event_number:
+      description: "PR id"
+      required: true
       
 runs:
   using: "composite"
@@ -38,7 +40,7 @@ runs:
         github-token: ${{ inputs.github_token }}
         script: |
          github.issues.createComment({
-            issue_number: ${{ github.event.number }},
+            issue_number: ${{ inputs.github_event_number }},
             owner: context.repo.owner,
             repo: context.repo.repo,
             body: ${{ inputs.pr_message }}
